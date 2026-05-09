@@ -1184,7 +1184,7 @@ footer em { color:var(--purple); font-style:normal; }
 
     <!-- Only non-sensitive public links -->
     <div class="ct-links rv">
-      <a href="https://www.linkedin.com/in/solomon-erkineh" target="_blank" rel="noopener" class="ct-link glass">
+      <a href="https://www.linkedin.com/in/solomon-erkineh-68098aa8/"target="_blank" rel="noopener" class="ct-link glass">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
         LinkedIn Profile
       </a>
@@ -1831,7 +1831,10 @@ async function sendMessage(){
     status.textContent = '';
 
     try {
-      const res = await fetch('/api/contact', {
+      const CONTACT_URL = window.CHAT_API_URL
+        ? window.CHAT_API_URL.replace('/api/chat', '/api/contact')
+        : '/api/contact';
+      const res = await fetch(CONTACT_URL, {
         method: 'POST',
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify(data)
