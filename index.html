@@ -3,7 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Solomon Erkineh | InfoSec & IT Risk Analyst</title>
+  <title>Solomon Erkineh | IT Risk & InfoSec Analyst | Prague</title>
+  <meta name="description" content="Solomon Erkineh — Information Security and IT Risk Analyst based in Prague. Expert in SOC 2, ISO 27001, TPRM, and executive security reporting. Currently at Commerzbank." />
+
+  <!-- Open Graph / LinkedIn preview -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://www.solomonerkineh.com/" />
+  <meta property="og:title"       content="Solomon Erkineh | IT Risk & InfoSec Analyst" />
+  <meta property="og:description" content="InfoSec & IT Risk professional helping enterprise organizations improve cyber risk visibility, compliance, and executive security reporting." />
+  <meta property="og:image"       content="https://www.solomonerkineh.com/solomon.png" />
+  <meta name="twitter:card"       content="summary_large_image" />
+
+  <!-- Favicon (shield SVG inline) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23a855f7'/><text y='72' x='50' text-anchor='middle' font-size='60' font-family='Inter,sans-serif' font-weight='700' fill='white'>SE</text></svg>" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
@@ -207,6 +220,17 @@ main { position:relative; z-index:1; }
 .h-bio strong { color:var(--text); }
 
 /* CTA buttons */
+.h-chips {
+  display:flex; flex-wrap:wrap; gap:8px;
+  margin-bottom:24px; opacity:0; transform:translateY(16px);
+}
+.h-chip {
+  font-size:.72rem; font-weight:600; letter-spacing:.08em;
+  padding:5px 14px; border-radius:20px;
+  border:1px solid rgba(168,85,247,.35);
+  color:#c084fc; background:rgba(168,85,247,.08);
+  text-transform:uppercase;
+}
 .h-btns { display:flex; gap:12px; flex-wrap:wrap; opacity:0; transform:translateY(20px); }
 
 .btn-p {
@@ -790,12 +814,21 @@ footer em { color:var(--purple); font-style:normal; }
     </div>
 
     <p class="h-bio" id="h-bio">
-      Dedicated Information Security &amp; IT Risk professional with deep expertise in infosec controls, audit coordination, and enterprise risk reporting. Currently driving security visibility at <strong>Commerzbank</strong>, Prague.
+      Information Security &amp; IT Risk Analyst helping enterprise organizations improve <strong>cyber risk visibility</strong>, compliance posture, and executive security reporting. Currently at <strong>Commerzbank</strong>, Prague.
     </p>
 
+    <div class="h-chips" id="h-chips">
+      <span class="h-chip">ISO 27001</span>
+      <span class="h-chip">SOC 2</span>
+      <span class="h-chip">NIST</span>
+      <span class="h-chip">TPRM</span>
+      <span class="h-chip">GRC</span>
+    </div>
+
     <div class="h-btns" id="h-btns">
-      <a href="#experience" class="btn-p">View My Work</a>
-      <a href="mailto:solomon@solomonerkineh.com" class="btn-s">Get in Touch</a>
+      <a href="./Solomon CV.pdf" download class="btn-p">⬇ Download CV</a>
+      <a href="#experience" class="btn-s">View Experience</a>
+      <a href="mailto:solomon.teshome@protonmail.com" class="btn-s">Book a Call</a>
     </div>
   </div>
 
@@ -834,19 +867,19 @@ footer em { color:var(--purple); font-style:normal; }
 
     <div class="stats rv">
       <div class="stat-c glass gcard">
-        <div class="stat-n" data-target="4">0</div>
+        <div class="stat-n" data-target="4">4+</div>
         <div class="stat-l">Years of<br>Experience</div>
       </div>
       <div class="stat-c glass gcard">
-        <div class="stat-n" data-target="3">0</div>
+        <div class="stat-n" data-target="3">3</div>
         <div class="stat-l">Enterprise<br>Companies</div>
       </div>
       <div class="stat-c glass gcard">
-        <div class="stat-n" data-target="1">0</div>
+        <div class="stat-n" data-target="1">1</div>
         <div class="stat-l">SOC 2<br>Led End-to-End</div>
       </div>
       <div class="stat-c glass gcard">
-        <div class="stat-n" data-target="2">0</div>
+        <div class="stat-n" data-target="2">2</div>
         <div class="stat-l">Active<br>Certifications</div>
       </div>
     </div>
@@ -937,40 +970,32 @@ footer em { color:var(--purple); font-style:normal; }
         <div class="slbl"><span class="sname">ISO 27001 / ISMS</span><span class="spct">95%</span></div>
         <div class="bar"><div class="fill fp" data-w="95"></div></div>
       </div>
-      <div class="srow">
-        <div class="slbl"><span class="sname">SOC 2 Compliance</span><span class="spct">92%</span></div>
-        <div class="bar"><div class="fill fp" data-w="92"></div></div>
+      <div style="margin-bottom:10px;font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--text2);">Frameworks</div>
+      <div class="tags" style="margin-bottom:16px;">
+        <span class="tag">ISO 27001</span><span class="tag">SOC 2</span><span class="tag">NIST CSF</span><span class="tag">TPRM</span><span class="tag">GDPR</span>
       </div>
-      <div class="srow">
-        <div class="slbl"><span class="sname">Security Awareness &amp; Phishing</span><span class="spct">90%</span></div>
-        <div class="bar"><div class="fill fp" data-w="90"></div></div>
-      </div>
-      <div class="srow">
-        <div class="slbl"><span class="sname">Third-Party Risk (DDQ)</span><span class="spct">88%</span></div>
-        <div class="bar"><div class="fill fp" data-w="88"></div></div>
-      </div>
-      <div class="srow">
-        <div class="slbl"><span class="sname">Access Recertification</span><span class="spct">95%</span></div>
-        <div class="bar"><div class="fill fp" data-w="95"></div></div>
+      <div style="margin-bottom:10px;font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--text2);">Specialisms</div>
+      <div class="tags">
+        <span class="tag">Audit Coordination</span><span class="tag">Access Recertification</span><span class="tag">Security Awareness</span><span class="tag">KRI / KPP Reporting</span><span class="tag">Executive Reporting</span><span class="tag">Vendor Risk (DDQ)</span>
       </div>
     </div>
 
     <!-- Stat block bento -->
     <div class="bc-stat-block glass gcard" style="opacity:0;transform:translateY(30px);">
       <div class="bstat">
-        <div class="big-num" data-target="4">0</div>
+        <div class="big-num" data-target="4">4+</div>
         <div class="big-lbl">Years in<br>InfoSec</div>
       </div>
       <div class="bstat">
-        <div class="big-num" data-target="3">0</div>
+        <div class="big-num" data-target="3">3</div>
         <div class="big-lbl">Enterprise<br>Clients</div>
       </div>
       <div class="bstat">
-        <div class="big-num" data-target="1">0</div>
+        <div class="big-num" data-target="1">1</div>
         <div class="big-lbl">SOC 2<br>Led</div>
       </div>
       <div class="bstat">
-        <div class="big-num" data-target="2">0</div>
+        <div class="big-num" data-target="2">2</div>
         <div class="big-lbl">Active<br>Certs</div>
       </div>
     </div>
@@ -1013,17 +1038,9 @@ footer em { color:var(--purple); font-style:normal; }
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
         Risk &amp; Audit
       </div>
-      <div class="srow">
-        <div class="slbl"><span class="sname">IT Risk Management</span><span class="spct">90%</span></div>
-        <div class="bar"><div class="fill fc" data-w="90"></div></div>
-      </div>
-      <div class="srow">
-        <div class="slbl"><span class="sname">KRI / KPP Reporting</span><span class="spct">88%</span></div>
-        <div class="bar"><div class="fill fc" data-w="88"></div></div>
-      </div>
-      <div class="srow">
-        <div class="slbl"><span class="sname">Audit Coordination</span><span class="spct">92%</span></div>
-        <div class="bar"><div class="fill fc" data-w="92"></div></div>
+      <div style="margin-bottom:10px;font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--text2);">Soft Skills</div>
+      <div class="tags">
+        <span class="tag">Executive Reporting</span><span class="tag">Stakeholder Mgmt</span><span class="tag">Cross-team Collaboration</span><span class="tag">Risk Communication</span>
       </div>
     </div>
 
@@ -1263,12 +1280,13 @@ window.addEventListener('resize',()=>{
 
 /* ══════════ HERO ENTRANCE ══════════ */
 gsap.timeline({delay:.3})
-  .to('#h-badge',{opacity:1,y:0,duration:.65,ease:'power3.out'})
-  .to('#h-name', {opacity:1,y:0,duration:.85,ease:'power3.out'},'-=.3')
-  .to('#h-role', {opacity:1,y:0,duration:.6, ease:'power3.out'},'-=.45')
-  .to('#h-bio',  {opacity:1,y:0,duration:.6, ease:'power3.out'},'-=.35')
-  .to('#h-btns', {opacity:1,y:0,duration:.6, ease:'power3.out'},'-=.3')
-  .to('#h-right',{opacity:1,x:0,duration:1,  ease:'power3.out'},'-=.7');
+  .to('#h-badge', {opacity:1,y:0,duration:.65,ease:'power3.out'})
+  .to('#h-name',  {opacity:1,y:0,duration:.85,ease:'power3.out'},'-=.3')
+  .to('#h-role',  {opacity:1,y:0,duration:.6, ease:'power3.out'},'-=.45')
+  .to('#h-bio',   {opacity:1,y:0,duration:.6, ease:'power3.out'},'-=.35')
+  .to('#h-chips', {opacity:1,y:0,duration:.5, ease:'power3.out'},'-=.25')
+  .to('#h-btns',  {opacity:1,y:0,duration:.6, ease:'power3.out'},'-=.3')
+  .to('#h-right', {opacity:1,x:0,duration:1,  ease:'power3.out'},'-=.7');
 
 /* photo parallax */
 gsap.to('.photo-wrap',{y:-70,ease:'none',scrollTrigger:{trigger:'#hero',start:'top top',end:'bottom top',scrub:true}});
@@ -1311,24 +1329,26 @@ gsap.utils.toArray('.bento > *').forEach((el,i)=>{
     }});
 });
 
-/* stat counters (about) */
+/* stat counters — animate from 0 to target, with static fallback already set in HTML */
+function animateCounter(el, duration){
+  const t = +el.dataset.target;
+  const suffix = t >= 4 ? '+' : '';
+  const o = {v:0};
+  gsap.to(o, {v:t, duration, ease:'power2.out',
+    onUpdate(){ el.textContent = Math.round(o.v) + suffix; }
+  });
+}
 document.querySelectorAll('.stat-n').forEach(el=>{
-  const t=+el.dataset.target;
-  ScrollTrigger.create({trigger:el,start:'top 80%',onEnter:()=>{
-    const o={v:0};
-    gsap.to(o,{v:t,duration:1.6,ease:'power2.out',
-      onUpdate(){el.textContent=Math.round(o.v)+(t>=4?'+':'');}});
-  }});
+  ScrollTrigger.create({
+    trigger: el, start:'top 90%', once:true,
+    onEnter(){ animateCounter(el, 1.6); }
+  });
 });
-
-/* bento big nums */
 document.querySelectorAll('.big-num').forEach(el=>{
-  const t=+el.dataset.target;
-  ScrollTrigger.create({trigger:el,start:'top 85%',onEnter:()=>{
-    const o={v:0};
-    gsap.to(o,{v:t,duration:1.4,ease:'power2.out',
-      onUpdate(){el.textContent=Math.round(o.v)+(t>=4?'+':'');}});
-  }});
+  ScrollTrigger.create({
+    trigger: el, start:'top 90%', once:true,
+    onEnter(){ animateCounter(el, 1.4); }
+  });
 });
 
 /* education */
@@ -1504,12 +1524,26 @@ style.textContent=`
 .acp-send:disabled{opacity:.4;}
 .acp-send svg{width:16px;height:16px;fill:#fff;}
 
+/* Privacy note */
+.acp-privacy{
+  text-align:center;font-size:.63rem;color:rgba(122,143,181,.45);
+  padding:5px 12px 2px;line-height:1.4;
+}
 /* Branding footer */
 .acp-brand{
   text-align:center;font-size:.65rem;color:rgba(122,143,181,.5);
-  padding:6px;border-top:1px solid rgba(255,255,255,.04);
+  padding:4px 6px 8px;
 }
 .acp-brand a{color:rgba(168,85,247,.6);text-decoration:none;}
+
+/* Mobile: show chat icon only, delay panel open */
+@media(max-width:600px){
+  #ai-chat-panel{
+    bottom:80px;right:12px;left:12px;width:auto;
+    height:min(520px,calc(100vh - 120px));
+  }
+  #ai-chat-btn{bottom:16px;right:16px;}
+}
 `;
 document.head.appendChild(style);
 
@@ -1532,15 +1566,15 @@ document.body.insertAdjacentHTML('beforeend',`
 
   <div class="acp-msgs" id="acp-msgs">
     <div class="chat-msg bot">
-      👋 Hi! I'm Solomon's AI assistant. Ask me anything about his background, skills, experience, or availability — I'm here to help!
+      👋 Hi! I'm Solomon's portfolio assistant. Ask me about his experience with <strong>SOC 2</strong>, his roles at <strong>Commerzbank</strong> and <strong>ISS Stoxx</strong>, or how to schedule an interview.
     </div>
   </div>
 
   <div class="acp-suggestions" id="acp-suggestions">
-    <button>What's Solomon's experience?</button>
-    <button>What certifications does he have?</button>
-    <button>Is he open to new roles?</button>
-    <button>Tell me about his SOC 2 work</button>
+    <button>His SOC 2 experience</button>
+    <button>Current role at Commerzbank</button>
+    <button>Is he open to relocate?</button>
+    <button>How to schedule an interview</button>
   </div>
 
   <div class="acp-input-row">
@@ -1550,6 +1584,7 @@ document.body.insertAdjacentHTML('beforeend',`
       <svg viewBox="0 0 24 24"><path d="M22 2L11 13"/><path d="M22 2L15 22l-4-9-9-4 20-7z"/></svg>
     </button>
   </div>
+  <div class="acp-privacy">🔒 AI-powered · Don't share sensitive company data · Contact info handled securely</div>
   <div class="acp-brand">Powered by <a href="https://anthropic.com" target="_blank">Claude AI</a></div>
 </div>
 `);
