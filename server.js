@@ -24,8 +24,6 @@ IMPORTANT: Only state facts that are explicitly listed in this profile. Never in
 
 **Title:** Information Security and IT Risk Analyst
 **Location:** Prague, Czech Republic
-**Email:** solomon.teshome@protonmail.com
-**Phone:** +420 774 397 611
 **Languages:** Amharic (Native / Bilingual), English (Full Professional)
 **Interests:** AI, Traveling, Video Games
 
@@ -106,8 +104,8 @@ Solomon is **open to relocation** — he is willing to move for the right opport
 ## Instructions for You (the AI assistant)
 
 - Answer questions about Solomon's experience, skills, availability, and projects warmly and professionally
-- For contact, give his real email: solomon.teshome@protonmail.com or phone: +420 774 397 611
-- If asked about something not in this profile (specific tools, other companies, other certs), say you only have the information above and suggest contacting Solomon directly
+- For contact: NEVER share an email address or phone number. Instead say: "You can reach Solomon using the contact form at the bottom of this page — he responds within 24 hours."
+- If asked about something not in this profile (specific tools, other companies, other certs), say you only have the information above and suggest using the contact form
 - Do NOT invent tools, skills, companies, or achievements not listed here
 - Keep responses concise but informative
 - Use markdown formatting (bullet points, bold) — the chat widget renders it
@@ -200,6 +198,68 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   if (req.method === 'OPTIONS') return res.sendStatus(204);
   next();
+});
+
+// ─── Contact form endpoint ───────────────────────────────────────────────────
+// Receives form submissions and forwards to Solomon's private inbox via email.
+// The recipient address lives only in the server environment — never in the HTML.
+app.post('/api/contact', async (req, res) => {
+  const { name, email, subject, message } = req.body;
+
+  // Basic validation
+  if (!name || !email || !message) {
+    return res.status(400).json({ error: 'Name, email, and message are required.' });
+  }
+  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRe.test(email)) {
+    return res.status(400).json({ error: 'Please provide a valid email address.' });
+  }
+  if (message.length > 5000) {
+    return res.status(400).json({ error: 'Message is too long.' });
+  }
+
+  const RECIPIENT = process.env.CONTACT_EMAIL; // set in Render env vars — never in code
+  if (!RECIPIENT) {
+    console.error('CONTACT_EMAIL env var not set');
+    return res.status(500).json({ error: 'Contact form not configured.' });
+  }
+
+  // Use Resend (free tier: 3,000 emails/month) if RESEND_API_KEY is set,
+  // otherwise log to console for local dev.
+  const RESEND_KEY = process.env.RESEND_API_KEY;
+  if (RESEND_KEY) {
+    try {
+      const response = await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${RESEND_KEY}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          from: 'Portfolio Contact <onboarding@resend.dev>',
+          to: [RECIPIENT],
+          reply_to: email,
+          subject: `[Portfolio] ${subject || 'New message'} — from ${name}`,
+          text: `Name: ${name}\nEmail: ${email}\n\n${message}`
+        })
+      });
+      if (!response.ok) {
+        const err = await response.json();
+        throw new Error(err.message || 'Email send failed');
+      }
+    } catch (err) {
+      console.error('Resend error:', err);
+      return res.status(500).json({ error: 'Failed to send message. Please try again.' });
+    }
+  } else {
+    // Local dev fallback — print to console
+    console.log('\n📬 Contact form submission:');
+    console.log(`  From: ${name} <${email}>`);
+    console.log(`  Subject: ${subject}`);
+    console.log(`  Message: ${message}\n`);
+  }
+
+  res.json({ ok: true });
 });
 
 // Fallback — serve index.html for any unknown route
